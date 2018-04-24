@@ -6,7 +6,8 @@ import org.openqa.selenium.support.How;
 
 import com.GenericFunctions.GenericFunctions;
 
-public class Dashboard extends GenericFunctions {
+
+public class Dashboard extends GenericFunctions{
 	
 	//**************************** Dashboard *************************
 	

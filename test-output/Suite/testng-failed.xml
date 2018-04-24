@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.GenericFunctions.TestNGListeners"/>
+  </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="com.TestCases.Tc_01_ValidateLoginCredentials">
+      <class name="com.TestCases.Tc_01_Addstaff">
         <methods>
-          <include name="Tc_01_ValidateLoginCredentials"/>
+          <include name="addstaff"/>
         </methods>
-      </class> <!-- com.TestCases.Tc_01_ValidateLoginCredentials -->
+      </class> <!-- com.TestCases.Tc_01_Addstaff -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

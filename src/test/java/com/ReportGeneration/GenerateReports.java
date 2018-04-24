@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import com.GenericFunctions.GenericFunctions;
+
 import com.GenericFunctions.TestNGListeners;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -53,10 +54,11 @@ public class GenerateReports {
 		
 	}
 	
-	public static void logEvent(String status,String Description)
+	public static boolean logEvent(String stat,String Description)
 	{
-		
-		switch (status.toLowerCase()) {
+		boolean status=true;
+		{
+		switch (stat.toLowerCase()) {
 		case "pass":
 			
 			test.log(LogStatus.PASS, Description+test.addScreenCapture(getScreenShot()));
@@ -83,9 +85,9 @@ public class GenerateReports {
 		default:
 			break;
 		}
-		
+		return status;
 	}
-	
+	}
 	
 	public static String getScreenShot()
 	{
@@ -108,7 +110,7 @@ public class GenerateReports {
 		
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/YY");
 		
-		String path="";
+		String path="xyz";
 		
 		File f=new File(System.getProperty("user.dir")+"\\Results\\"+sdf.format(new Date()).replace("/", "")+"\\"+TestNGListeners.crntclass);
 		
@@ -119,7 +121,10 @@ public class GenerateReports {
 			f.mkdirs();
 			path=System.getProperty("user.dir")+"\\Results\\"+sdf.format(new Date()).replace("/", "")+"\\"+TestNGListeners.crntclass;
 		}
-		
+		else
+		{
+			path=System.getProperty("user.dir")+"\\Results\\"+sdf.format(new Date()).replace("/", "")+"\\"+TestNGListeners.crntclass;
+		}
 		return path;
 	}
 
